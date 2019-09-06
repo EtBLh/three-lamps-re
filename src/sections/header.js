@@ -35,9 +35,9 @@ let Header = () => {
             <img src={OpeningTitle} alt='shadow' className='openingTitleShadow' 
                  style={{filter: `blur(50px) opacity(${1-fadeOutRate})`}}/>
 
-            <a id='scrollDownTip' href=''>
+            <span id='scrollDownTip'>
                 Scroll Down↓
-            </a>
+            </span>
         </header>
     )
 }

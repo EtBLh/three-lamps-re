@@ -3,6 +3,7 @@ header {
     width: 100vw;
     background-color: #050817;
     position: fixed;
+    scroll-snap-align: start;
 
     #openingImg {
         position: absolute;

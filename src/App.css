@@ -10,6 +10,11 @@ html, body, #root{
   margin: 0;
   background-color: #050817;
   font-size: 16px;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  color: white;
+  font-family: 'Noto Serif TC', serif;
 }
 
 .App{

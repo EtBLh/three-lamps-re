@@ -8206,6 +8206,11 @@ react-scripts@3.1.1:
   optionalDependencies:
     fsevents "2.0.7"
 
+react-scrollmagic@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-scrollmagic/-/react-scrollmagic-2.1.1.tgz#3c174ccc1d6b884d0d17257d36fc010258dae1f8"
+  integrity sha512-ELdWwdLWHF9qrZA74GTA/2JuxgbZxjq/mlXGNAYDQ9+pOzj2TGqiGNqm4rhQM+ifdh9YrB/2Xmzyy/AtWoeGPw==
+
 react@^16.9.0:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.9.0.tgz#40ba2f9af13bc1a38d75dbf2f4359a5185c4f7aa"

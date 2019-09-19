@@ -1,0 +1,63 @@
+#shops {
+  position: relative;
+  z-index: 0;
+  height: 100vh; }
+
+#pinContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+  #pinContainer #slideContainer {
+    width: 600vw;
+    height: 100%; }
+    #pinContainer #slideContainer .panel {
+      display: inline-block;
+      position: relative;
+      height: 100%;
+      width: 100vw;
+      margin: 0;
+      height: 100%;
+      padding: 1.5rem; }
+      #pinContainer #slideContainer .panel .shop-info {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        #pinContainer #slideContainer .panel .shop-info img {
+          border: 2px solid #ffd32f;
+          display: block;
+          margin: 0 auto;
+          border-radius: 1rem; }
+        #pinContainer #slideContainer .panel .shop-info .title-wrapper {
+          margin-top: -1rem;
+          margin-left: -1rem;
+          max-width: 70%; }
+          #pinContainer #slideContainer .panel .shop-info .title-wrapper span {
+            background-color: #ffd32f;
+            color: #050817;
+            padding: .1rem 1.5rem .1rem 1.5rem;
+            font-size: 1.7rem; }
+        #pinContainer #slideContainer .panel .shop-info .address {
+          text-align: right;
+          margin-top: 1rem;
+          display: block;
+          color: white;
+          opacity: 0.7; }
+      #pinContainer #slideContainer .panel .hide-modal {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0; }
+      #pinContainer #slideContainer .panel .map {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100vmin - 2rem);
+        height: calc(100vmin - 2rem);
+        background: white;
+        overflow: hidden;
+        z-index: 1; }

@@ -1,19 +1,23 @@
-header {
+#header-wrapper {
     height: 100vh;
     width: 100vw;
-    background-color: #050817;
-    position: fixed;
-    scroll-snap-align: start;
+    position: relative;
+    z-index: 100;
+
+    header{
+        height: 100%;
+        width: 100%;
+        background-color: #050817;
+    }
 
     #openingImg {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
     }
 
     %openingTitlePos {
-        position: absolute;
+        position: absolute ;
         top: 50%;
         left: 50%;
         transform: translate(-45%, -52%);
@@ -26,6 +30,7 @@ header {
 
     .openingTitleShadow {
         @extend %openingTitlePos;
+        filter: blur(10px);
     }
 
     #scrollDownTip {
@@ -48,6 +53,11 @@ header {
             height: 100vmin;
         }
     }
+}
+
+.fade-out{
+    opacity: 0;
+    display: none;
 }
 
 /* mobile */

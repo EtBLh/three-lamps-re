@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
 
+$mainColor: rgb(255, 211, 47);
+$bgColor: #050817;
+
 * {
     box-sizing: border-box;
     font-family: 'Noto Sans TC', sans-serif;
@@ -39,17 +42,40 @@ html, body{
     }
 }
 
+#slogan{
+    color: $mainColor;
+    font-size: 2.5rem;
+    right: -100%;
+    display: inline-block;
+    position: fixed;
+    top: .5rem;
+}
+
 #shops-wrapper{
     position: relative;
     height: calc(600vw + 100vh);
 }
 
 #take-photo{
-    height: 30vh;
+    height: 55vh;
     position: relative;
 }
 
 footer{
-    height: 70vh;
+    height: 45vh;
     position: relative;
+    padding: 1.5rem;
+    color: $bgColor;
+    background: $mainColor;
+    h3{
+        margin-bottom: 0;
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+    p{
+        margin-top: 0;
+        opacity: 0.9;
+        font-weight: 100;
+        font-size: .9rem;
+    }
 }

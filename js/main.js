@@ -5,11 +5,25 @@ let mapPins = [];
     let controller = new ScrollMagic.Controller();
 
     let tween = TweenLite
-    .to("header",1,{className: "+=fade-out",onComplete: ()=>{document.querySelector("#header-wrapper div").style+="display:none;"}});
+    .to("header",1,{className: "+=fade-out"});
+
     
     new ScrollMagic.Scene({
         duration: window.innerHeight/2
     }).setTween(tween).setPin("header").addTo(controller);
+}());
+
+(function(){
+    let controller = new ScrollMagic.Controller();
+
+    let TLL = new TimelineLite()
+    .to("#camera",0.4,{width: "50vmin", height: "50vmin"})
+    .to("#slogan",0.4,{right: '1rem',top: '50vmin'},'-=0.4');
+
+    
+    new ScrollMagic.Scene({
+        triggerElement: "#take-photo"
+    }).setTween(TLL).addTo(controller); 
 }());
 
 //shops
@@ -62,7 +76,7 @@ let mapPins = [];
 			.setPin("#pinContainer")
 			.setTween(wipeAnimation)
             .addTo(controller);
-}())
+}());
 
 var initMap = () => {
     mapPins.forEach(({lat, lng},index)=>{

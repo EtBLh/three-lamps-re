@@ -11,8 +11,9 @@ $mainColor: rgb(255, 211, 47);
     height: 100%;
     overflow: hidden;
     #slideContainer {
-        width: 600vw;
+        width: calc(600vw + 18rem);
         height: 100%;
+        font-size: 0px;
         .panel {
             display: inline-block;
             position: relative;
@@ -44,6 +45,7 @@ $mainColor: rgb(255, 211, 47);
                     }
                 }
                 .address{
+                    font-size: 1rem;
                     text-align: right;
                     margin-top: 1rem;
                     display: block;

@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box; }
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+  width: 100vw;
+  height: 100vh; }
+
+#info, #screenShot {
+  position: fixed;
+  top: .5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: block;
+  z-index: 100; }
+  #info img:nth-child(1), #screenShot img:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    position: absolute; }
+  #info img:nth-child(2), #screenShot img:nth-child(2) {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    filter: blur(1rem); }
+
+#info {
+  left: .5rem; }
+
+#screenShot {
+  right: .5rem; }
+
+#download-link {
+  display: none; }
+
+#instruction {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #050817;
+  z-index: 130;
+  text-align: center;
+  color: #ffd32f;
+  padding: 1.5rem; }
+  #instruction #back {
+    color: white;
+    opacity: 0.8;
+    position: absolute;
+    display: inline-block;
+    right: .5rem;
+    bottom: 2rem; }
+  #instruction .content {
+    position: absolute;
+    width: calc(100% - 3rem);
+    top: 50%;
+    transform: translateY(-50%); }
+  #instruction img {
+    width: 70vmin; }
+  #instruction ol {
+    text-align: left; }
+  #instruction #gotItBtn {
+    font-size: 1.5rem;
+    background: #ffd32f;
+    padding: .2rem 1rem .2rem 1rem;
+    color: #050817;
+    text-decoration: none;
+    border-radius: .2rem;
+    margin: 1rem 0 1rem 0;
+    display: inline-block; }
+
+.vanished {
+  top: -100% !important; }

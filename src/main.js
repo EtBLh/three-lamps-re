@@ -24,22 +24,12 @@ let mapPins = [];
                 <div class="title-wrapper">
                     <span>${name}</span>
                 </div>
-                <a href="javascript:show${index}();" class='address'>${address}</a>
+                <a href="javascript:show(${index});" class='address'>${address}</a>
             </div>
-            <a href="javascript:hide${index}();" id='hide${index}' style="display:none;" class="hide-modal"></a>
+            <a href="javascript:hide(${index});" id='hide${index}' style="display:none;" class="hide-modal"></a>
             <div id="map${index}" class="map" style="display:none"></div>
         </section>
         `
-        eval(`
-        var show${index} = function(){
-            document.querySelector("#map${index}").style="display:block";
-            document.querySelector("#hide${index}").style="display:block"; 
-        }
-        var hide${index} = function(){
-            document.querySelector("#map${index}").style="display:none";
-            document.querySelector("#hide${index}").style="display:none"; 
-        }
-        `)
     }
 
     fetch('https://mobile-web-design-skill-competition.netlify.com/shops.json')
@@ -52,6 +42,7 @@ let mapPins = [];
                 createShopPanel(shop.name,shop.photo_url,shop.address,i)
                 i++;
             }
+            initMap();
         })
 
     		// init
@@ -59,23 +50,35 @@ let mapPins = [];
 
 		// define movement of panels
         let wipeAnimation = new TimelineLite()
-			.to("#slideContainer", 1,   {x: "-100%"});
+			.to("#slideContainer", 1,   {x: "-75%"});
 
 		// create scene to pin and link animation
 		new ScrollMagic.Scene({
 				triggerElement: "#pinContainer",
 				triggerHook: "onLeave",
-				duration: window.innerWidth*4
+                duration: window.innerWidth*6,
+                pushfollowers: true
 			})
 			.setPin("#pinContainer")
 			.setTween(wipeAnimation)
             .addTo(controller);
 }())
 
-function initMap() {
-    let map = new google.maps.Map(document.getElementById('map0'), {
-      center: {lat: -34.397, lng: 150.644},
-      zoom: 15
-    });
-    new google.maps.Marker({position:{lat: -34.397, lng: 150.644},map: map})
+var initMap = () => {
+    mapPins.forEach(({lat, lng},index)=>{
+        let map = new google.maps.Map(document.getElementById(`map${index}`), {
+            center: {lat: lat, lng: lng},
+            zoom: 15
+          });
+          new google.maps.Marker({position:{lat: lat, lng: lng},map: map})
+    })
+}
+
+var show = (index) => {
+    document.querySelector(`#map${index}`).style="display:block";
+    document.querySelector(`#hide${index}`).style="display:block"; 
+}
+var hide = (index) => {
+    document.querySelector(`#map${index}`).style="display:none";
+    document.querySelector(`#hide${index}`).style="display:none"; 
 }

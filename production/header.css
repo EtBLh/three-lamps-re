@@ -1,0 +1,47 @@
+#header-wrapper {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  z-index: 100; }
+  #header-wrapper header {
+    height: 100%;
+    width: 100%;
+    background-color: #050817; }
+  #header-wrapper #openingImg {
+    position: absolute;
+    top: 50%;
+    left: 50%; }
+  #header-wrapper #openingTitle, #header-wrapper .openingTitleShadow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-45%, -52%);
+    width: 80vmin; }
+  #header-wrapper .openingTitleShadow {
+    filter: blur(10px); }
+  #header-wrapper #scrollDownTip {
+    color: rgba(255, 255, 255, 0.7);
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    font-size: 1rem;
+    font-family: 'IBM Plex Mono', monospace;
+    text-decoration: none; }
+
+/* desktop */
+@media only screen and (min-width: 760px) {
+  header #openingImg {
+    height: 100vmin; } }
+
+.fade-out {
+  opacity: 0;
+  display: none; }
+
+/* mobile */
+@media only screen and (max-width: 760px) {
+  header #openingImg {
+    transform: rotate(90deg) translate(-50%, -50%);
+    transform-origin: top left;
+    height: 100vmin; } }
